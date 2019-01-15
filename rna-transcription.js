@@ -1,15 +1,24 @@
 export function toRna(dna) {
-  if (dna === 'C') {
+    let i;
+    let rna = '';
+    for( i=0; i < dna.length; i++ ){
+        rna = rna + getComplement(dna[i])
+    }
+    return rna;
+}
+
+function getComplement(nucleotides) {
+  if (nucleotides === 'C') {
       return 'G';
   }
-  if (dna === 'G') {
-      return 'C';
+  if (nucleotides === 'G') {
+     return 'C';
   }
-  if (dna === 'A') {
-      return 'U';
+  if (nucleotides === 'A') {
+    return 'U';
   }
-  if (dna === 'T'){
-      return 'A';
+  if (nucleotides === 'T'){
+    return 'A';
   }
   return '';
 }
