@@ -4,8 +4,13 @@ export function toRna(dna) {
     }
     let i;
     let rna = '';
-    for( i=0; i < dna.length; i++ ){
-        rna = rna + getComplement(dna[i])
+    for( i=0; i < dna.length; i++ ) {
+        if (dna[i] === 'A' || dna[i] === 'C' || dna[i] === 'G' || dna[i] === 'T') {
+            rna = rna + getComplement(dna[i])
+        }
+        else {
+            throw "Invalid input DNA."
+        }
     }
     return rna;
 }
