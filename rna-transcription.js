@@ -1,4 +1,7 @@
 export function toRna(dna) {
+    if( dna == 'U') {
+        throw "Invalid input DNA."
+    }
     let i;
     let rna = '';
     for( i=0; i < dna.length; i++ ){
